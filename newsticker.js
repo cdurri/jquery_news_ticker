@@ -1,10 +1,8 @@
 var interval;
-function startTicker()
-{
-$("#news li:first").slideUp(function() {
-
-    $(this).appendTo($("#news")).slideDown();
-});
+var startTicker = function () {
+	$("#news li:first").slideUp(function() {
+	    $(this).appendTo($("#news")).slideDown();
+	});
 }
 
 function stopTicker()
@@ -14,11 +12,11 @@ function stopTicker()
 
 $(document).ready(function() {
 
-    interval = setInterval(startTicker, 2000);
+    interval = setInterval(startTicker, 4000);
 
     $("#news").hover(function(){
         stopTicker();
     }, function(){
-        interval = setInterval(startTicker, 2000);
+        interval = setInterval(startTicker, 4000);
     });
 });
